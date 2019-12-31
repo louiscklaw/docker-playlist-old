@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
+    - name: build image
+      run: docker build ./docker-helloworld
+
     - name: Send message to Slack API
       uses: archive/github-actions-slack@master
       with:
