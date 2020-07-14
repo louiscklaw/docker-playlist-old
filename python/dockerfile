@@ -1,0 +1,6 @@
+FROM python
+
+RUN /project
+WORKDIR /project
+
+CMD ["python3"]
