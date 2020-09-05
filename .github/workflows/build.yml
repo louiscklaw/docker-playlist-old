@@ -15,6 +15,7 @@ jobs:
     - name: Test
       run: |
         pwd
+        cd docker-puppeteer-tryout
         docker-compose -f docker-compose.integration-tests.yml build tests
         docker-compose -f docker-compose.integration-tests.yml run tests
         ls screenshots/app.png
