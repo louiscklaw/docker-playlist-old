@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build
+    - name: Build8
       run: echo 'helloworld'
     - name: Test
       run: |
