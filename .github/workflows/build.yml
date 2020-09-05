@@ -30,7 +30,6 @@ jobs:
           docker build .
         cd ..
 
-
   test-docker-python-tryout:
     runs-on: ubuntu-latest
     steps:
