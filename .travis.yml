@@ -16,7 +16,5 @@ cache:
 
 import:
   - credentials.yml
-
-script:
-  - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
-  - bash merge_if_success.sh | tee merge.log
+  - .travis-merger.yml
+  - .travis-stages.yml
