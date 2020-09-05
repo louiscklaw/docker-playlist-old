@@ -21,3 +21,4 @@ import:
   - .travis-merger.yml
   - .travis-stages.yml
   - docker-puppeteer-tryout/.travis.yml
+  - docker-python-tryout/.travis.yml
