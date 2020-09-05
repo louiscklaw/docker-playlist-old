@@ -25,10 +25,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Test docker-yarn-tryout
-      run:
-        - cd docker-yarn-tryout
-        -   docker build .
-        - cd ..
+      run: |
+        cd docker-yarn-tryout
+          docker build .
+        cd ..
 
 
   # This workflow contains a single job called "greet"
