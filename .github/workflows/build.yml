@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: echo 'helloworld'
-    - name: Test
+    - name: Test docker-puppeteer-tryout
       run: |
         pwd
         cd docker-puppeteer-tryout
