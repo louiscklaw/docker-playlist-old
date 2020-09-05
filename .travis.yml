@@ -14,7 +14,10 @@ cache:
   - npm
   - pip
 
+
+
 import:
   - credentials.yml
   - .travis-merger.yml
   - .travis-stages.yml
+  - docker-puppeteer-tryout/.travis.yml

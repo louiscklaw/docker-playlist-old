@@ -2,15 +2,10 @@
 
 set -ex
 
-docker build -t logickee/docker_puppeteer_tryout -f dockerfile . &
+rm -rf docker-puppeteer-tryout/screenshots
 
-wait
+cd docker-puppeteer-tryout
+    docker-compose -f docker-compose.integration-tests.yml run tests
 
-docker run -it \
-  --env-file .env.docker \
-  -v $TMP_DIR:/root \
-  -v $PWD:/root/work_dir \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  --rm \
-  logickee/docker_puppeteer_tryout \
-  sh ./entry.sh
+    ls screenshots/
+cd ..
