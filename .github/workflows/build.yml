@@ -20,6 +20,17 @@ jobs:
         name: test-screenshot.png
         path: docker-puppeteer-tryout/screenshots/app.png
 
+  test-docker-yarn-tryout:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test docker-yarn-tryout
+      run:
+        - cd docker-yarn-tryout
+        -   docker build .
+        - cd ..
+
+
   # This workflow contains a single job called "greet"
   greet:
     needs: test-docker-puppeteer-tryout
