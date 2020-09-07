@@ -1,12 +1,11 @@
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
 # https://github.com/sdras/awesome-actions
 
-name: master_build
-on: [push]
+name: github-actions-helloworld
+on: [push, pull_request]
 
 jobs:
-
-  docker_helloworld_tryout:
+  github_actions_helloworld_tryout:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -17,6 +16,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       run: |
-        cd docker-helloworld-tryouts
-        docker build -t logickee/helloworld -f dockerfile .
-        cd ..
+        echo 'helloworld'
