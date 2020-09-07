@@ -9,4 +9,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: merge branch
       run: |
+        pwd
         ls -l
