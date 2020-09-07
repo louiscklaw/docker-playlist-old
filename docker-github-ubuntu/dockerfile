@@ -19,6 +19,9 @@ RUN sudo adduser runner docker
 RUN sudo adduser runner adm
 RUN sudo adduser runner systemd-journal
 
+RUN sudo chown 1001:116 -R /home/runner
+RUN ls -l /home
+
 USER runner
 WORKDIR /home/runner
 
