@@ -1,45 +1,8 @@
-name: Build
+name: Test
 
 on: [push, pull_request]
 
 jobs:
-
-  test-docker-puppeteer-tryout:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Test docker-puppeteer-tryout
-      run: |
-        pwd
-        cd docker-puppeteer-tryout
-        docker-compose -f docker-compose.integration-tests.yml build tests
-        docker-compose -f docker-compose.integration-tests.yml run tests
-        ls screenshots/app.png
-    - uses: actions/upload-artifact@v1
-      with:
-        name: test-screenshot.png
-        path: docker-puppeteer-tryout/screenshots/app.png
-
-  test-docker-yarn-tryout:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Test docker-yarn-tryout
-      run: |
-        cd docker-yarn-tryout
-          docker build .
-        cd ..
-
-  test-docker-python-tryout:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Test docker-python-tryout
-      run: |
-        cd docker-python-tryout
-          docker build .
-        cd ..
-
   # This workflow contains a single job called "greet"
   merge:
     # needs: test-docker-puppeteer-tryout
@@ -51,9 +14,4 @@ jobs:
     # Runs a single command using the runners shell
     - name: merge branch
       run: |
-        sudo apt update
-        sudo apt install -y python3 python3-pip python3-dev python3-wheel python3-setuptools
-        python3 -m pip install pipenv
-    - name: retry
-      run: |
-        which pipenv
+        ls -l
