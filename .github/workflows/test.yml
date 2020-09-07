@@ -26,6 +26,8 @@ jobs:
 
         pipenv --help
 
+        ls -l
+
         cd pipenv_test
           pipenv sync
           pipenv run python3 ./helloworld.py
