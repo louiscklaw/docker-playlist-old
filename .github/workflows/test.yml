@@ -22,6 +22,17 @@ jobs:
 
         pipenv --help
 
-        cd pipenv_test
+        # cd pipenv_test
+        #   pipenv sync
+        #   pipenv run python3 ./helloworld.py
+
+        mkdir -p tmp
+        cd tmp
+          wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/_util/merge.py
+          wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/_util/Pipfile
+          wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/_util/Pipfile.lock
+          chmod +x merge.py
+
           pipenv sync
-          pipenv run python3 ./helloworld.py
+          pipenv run python3 ./merge.py
+        cd -
