@@ -22,7 +22,11 @@ RUN sudo adduser runner systemd-journal
 RUN sudo chown 1001:116 -R /home/runner
 RUN ls -l /home
 
+COPY ./overlay/etc/sudoers/runner /etc/sudoers.d/runner
+
 USER runner
 WORKDIR /home/runner
+
+RUN sudo cat /etc/sudoers
 
 CMD ["/bin/bash"]
